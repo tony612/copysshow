@@ -5,6 +5,8 @@ defmodule Copysshow.Work do
     field :image_url, :string
     field :type, :string
 
+    belongs_to :post, Copysshow.Post
+
     timestamps
   end
 end
