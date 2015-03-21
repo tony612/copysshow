@@ -1,0 +1,5 @@
+<%= form_tag("/posts") do %>
+  <textarea name="post[description]" rows="8" cols="40"></textarea>
+
+  <input type="submit" value="Create">
+<% end %>

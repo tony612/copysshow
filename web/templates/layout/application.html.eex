@@ -13,6 +13,7 @@
 
   <body>
     <div class="container">
+      <a href="/posts/new">New post</a>
 
       <p class="info"><%= get_flash(@conn, :info) %></p>
       <p class="error"><%= get_flash(@conn, :error) %></p>

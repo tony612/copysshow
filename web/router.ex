@@ -16,6 +16,7 @@ defmodule Copysshow.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PostsController, :index
+    resources "/posts", PostsController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
