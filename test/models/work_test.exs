@@ -5,7 +5,7 @@ defmodule Models.WorkTest do
   alias Copysshow.Work
   alias Copysshow.Repo
 
-  test "the truth" do
+  test "db operation works" do
     work = %Work{image_url: "http://image.url", type: "original"}
     Repo.insert work
 

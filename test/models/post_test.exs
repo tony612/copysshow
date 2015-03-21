@@ -5,7 +5,7 @@ defmodule Models.PostTest do
   alias Copysshow.Work
   alias Copysshow.Repo
 
-  test "the truth" do
+  test "db operation works" do
     post = Repo.insert %Post{description: "This is desc."}
 
     work = Ecto.Model.build(post, :works)
