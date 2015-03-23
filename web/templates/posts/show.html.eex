@@ -1,1 +1,7 @@
-This is a post for copy.
+<%= if @post do %>
+
+<p><%= @post.description %></p>
+
+<% else %>
+  You can add a post about the original work and the copy.
+<% end %>

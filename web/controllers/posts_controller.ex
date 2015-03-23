@@ -6,8 +6,12 @@ defmodule Copysshow.PostsController do
   alias Copysshow.Repo
   alias Copysshow.Post
 
+  import Ecto.Query, only: [from: 2]
+
   def index(conn, _params) do
-    render conn, "show.html"
+    query = from p in Post, limit: 1, order_by: [desc: p.updated_at]
+    post = Repo.one query
+    render conn, "show.html", post: post
   end
 
   def new(conn, _params) do
