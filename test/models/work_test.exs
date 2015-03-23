@@ -1,9 +1,14 @@
 defmodule Models.WorkTest do
-  use ExUnit.Case, async: true
+  use ExUnit.Case
   import Ecto.Query
 
   alias Copysshow.Work
   alias Copysshow.Repo
+
+  setup do
+    Ecto.Adapters.SQL.restart_test_transaction(Repo)
+    :ok
+  end
 
   test "db operation works" do
     work = %Work{image_url: "http://image.url", type: "original"}

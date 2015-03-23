@@ -3,7 +3,7 @@ defmodule Copysshow.Work do
 
   schema "works" do
     field :image_url, :string
-    field :type, :string
+    field :type, :string # original, copy
 
     belongs_to :post, Copysshow.Post
 

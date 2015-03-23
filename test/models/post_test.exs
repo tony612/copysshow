@@ -1,9 +1,14 @@
 defmodule Models.PostTest do
-  use ExUnit.Case, async: true
+  use ExUnit.Case
 
   alias Copysshow.Post
   alias Copysshow.Work
   alias Copysshow.Repo
+
+  setup do
+    Ecto.Adapters.SQL.restart_test_transaction(Repo)
+    :ok
+  end
 
   test "db operation works" do
     post = Repo.insert %Post{description: "This is desc."}

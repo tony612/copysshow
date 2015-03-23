@@ -5,6 +5,7 @@ defmodule Copysshow.PostsController do
 
   alias Copysshow.Repo
   alias Copysshow.Post
+  alias Copysshow.Work
 
   import Ecto.Query, only: [from: 2]
 
@@ -19,7 +20,11 @@ defmodule Copysshow.PostsController do
   end
 
   def create(conn, params) do
-    Repo.insert %Post{description: params["post"]["description"]}
+    post = Repo.insert %Post{description: params["post"]["description"]}
+    Repo.insert %Work{post_id: post.id, type: "original",
+                      image_url: params["original"]["image_url"]}
+    Repo.insert %Work{post_id: post.id, type: "copy",
+                      image_url: params["copy"]["image_url"]}
     redirect conn, to: "/"
   end
 
