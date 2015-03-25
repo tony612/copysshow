@@ -13,7 +13,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: 'css/app.css',
+      before: [
+        'web/static/vendor/normalize.css'
+      ]
     },
     templates: {
       joinTo: 'js/app.js'

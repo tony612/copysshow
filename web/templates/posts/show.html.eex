@@ -1,10 +1,13 @@
 <%= if @post do %>
 
-<p><%= @post.description %></p>
+  <%= for work <- Enum.sort(@post.works, &(&1.type > &2.type)) do %>
+    <%= work.type %>
+    <br>
+    <img src="<%= work.image_url %>" alt=""/>
+    <br>
+  <% end %>
 
-<%= for work <- @post.works do %>
-  <img src="<%= work.image_url %>" alt="" style="width: 48%;"/>
-<% end %>
+  <p><%= @post.description %></p>
 
 <% else %>
   You can add a post about the original work and the copy.
