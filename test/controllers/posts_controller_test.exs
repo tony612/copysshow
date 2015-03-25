@@ -1,5 +1,5 @@
 defmodule Copysshow.PostsControllerTest do
-  use ExUnit.Case, async: false
+  use ExUnit.Case
   use Plug.Test
 
   alias Copysshow.Repo

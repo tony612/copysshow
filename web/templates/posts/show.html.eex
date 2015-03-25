@@ -2,6 +2,10 @@
 
 <p><%= @post.description %></p>
 
+<%= for work <- @post.works do %>
+  <img src="<%= work.image_url %>" alt="" style="width: 48%;"/>
+<% end %>
+
 <% else %>
   You can add a post about the original work and the copy.
 <% end %>

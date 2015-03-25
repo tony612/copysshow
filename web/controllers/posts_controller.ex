@@ -11,7 +11,7 @@ defmodule Copysshow.PostsController do
 
   def index(conn, _params) do
     query = from p in Post, limit: 1, order_by: [desc: p.updated_at]
-    post = Repo.one query
+    post = Repo.one(query) |> Repo.preload(:works)
     render conn, "show.html", post: post
   end
 
