@@ -13,7 +13,8 @@
 
   <body>
     <div class="container">
-      <a href="/posts/new">New post</a>
+      <%= link "Home", to: "/" %>
+      <%= link "New post", to: "/posts/new" %>
 
       <p class="info"><%= get_flash(@conn, :info) %></p>
       <p class="error"><%= get_flash(@conn, :error) %></p>

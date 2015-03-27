@@ -1,5 +1,8 @@
 <%= if @post do %>
 
+  <%= link "Next one", to: "/posts?page=#{@next_page}" %>
+  <br>
+
   <%= for work <- Enum.sort(@post.works, &(&1.type > &2.type)) do %>
     <%= work.type %>
     <br>

@@ -9,10 +9,12 @@ defmodule Copysshow.PostsController do
 
   import Ecto.Query, only: [from: 2]
 
-  def index(conn, _params) do
-    query = from p in Post, limit: 1, order_by: [desc: p.updated_at]
-    post = Repo.one(query) |> Repo.preload(:works)
-    render conn, "show.html", post: post
+  def index(conn, params) do
+    page = to_int(params["page"] || 1)
+    query = from(p in Post, order_by: [desc: p.updated_at]) |> paginate(page, 1)
+    post = Repo.one(query)
+    if post, do: post = Repo.preload(post, :works)
+    render conn, "show.html", post: post, next_page: page + 1
   end
 
   def new(conn, _params) do
@@ -26,6 +28,22 @@ defmodule Copysshow.PostsController do
     Repo.insert %Work{post_id: post.id, type: "copy",
                       image_url: params["copy"]["image_url"]}
     redirect conn, to: "/"
+  end
+
+  defp to_int(i) when is_integer(i), do: i
+  defp to_int(s) when is_binary(s) do
+    case Integer.parse(s) do
+      {i, _} -> i
+      :error -> :error
+    end
+  end
+
+  defp paginate(query, page \\ 1, size \\ 20) do
+    page = page || 1
+    size = size || 20
+    from query,
+      limit: ^size,
+      offset: ^((page - 1) * size)
   end
 
 end
