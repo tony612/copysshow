@@ -13,5 +13,5 @@
   <p><%= @post.description %></p>
 
 <% else %>
-  You can add a post about the original work and the copy.
+  You can add a post about the original work and the copy. Or just return home.
 <% end %>
