@@ -1,14 +1,14 @@
 <%= form_tag("/posts") do %>
-  Description:
-  <textarea name="post[description]" rows="8" cols="40"></textarea>
-  <br>
-
   Original:
   <input type="text" name="original[image_url]" value="">
   <br>
 
   Copy:
   <input type="text" name="copy[image_url]" value="">
+  <br>
+
+  Description:
+  <textarea name="post[description]" rows="8" cols="40"></textarea>
   <br>
 
   <input type="submit" value="Create">
