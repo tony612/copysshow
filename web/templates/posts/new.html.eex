@@ -1,10 +1,12 @@
-<%= form_tag("/posts") do %>
+<%= form_tag "/posts", multipart: true do %>
   Original:
   <input type="text" name="original[image_url]" value="">
+  <input type="file" name="original[file]">
   <br>
 
   Copy:
   <input type="text" name="copy[image_url]" value="">
+  <input type="file" name="copy[file]">
   <br>
 
   Description:
