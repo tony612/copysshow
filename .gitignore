@@ -16,3 +16,5 @@ erl_crash.dump
 /priv/static/js
 
 npm-debug.log.*
+
+config/*.secret.exs

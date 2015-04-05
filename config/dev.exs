@@ -31,3 +31,5 @@ config :copysshow, Copysshow.Repo,
   username: "postgres",
   password: "postgres",
   database: "copysshow_dev"
+
+import_config "dev.secret.exs"

@@ -15,7 +15,7 @@ defmodule Copysshow.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Copysshow, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :qiniu]]
   end
 
   # Specifies your project dependencies
@@ -25,6 +25,7 @@ defmodule Copysshow.Mixfile do
     [{:phoenix, github: "phoenixframework/phoenix", override: true},
      {:phoenix_ecto, "~> 0.1"},
      {:postgrex, ">= 0.0.0"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:qiniu, "~> 0.1.2"}]
   end
 end
