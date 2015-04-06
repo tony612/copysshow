@@ -26,6 +26,6 @@ defmodule Copysshow.Mixfile do
      {:phoenix_ecto, "~> 0.1"},
      {:postgrex, ">= 0.0.0"},
      {:cowboy, "~> 1.0"},
-     {:qiniu, "~> 0.1.2"}]
+     {:qiniu, github: "tony612/qiniu"}]
   end
 end

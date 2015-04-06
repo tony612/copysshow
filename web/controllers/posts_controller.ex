@@ -59,12 +59,9 @@ defmodule Copysshow.PostsController do
       work["image_url"] && String.length(work["image_url"]) > 0 -> work["image_url"]
       file && (%Plug.Upload{} = file)  ->
         now = timestamp(:erlang.now)
-        put_policy = %Qiniu.PutPolicy{
-          scope: "copysshow",
-          deadline: div(now, 1_000_000) + div(:timer.minutes(10), 1000)
-        }
+        put_policy = Qiniu.PutPolicy.build("copysshow")
 
-        res = Qiniu.Uploader.upload put_policy, file.path, key: "#{type}/#{now}_#{file.filename}"
+        res = Qiniu.Uploader.upload put_policy, file.path, "#{type}/#{now}_#{file.filename}"
         if res.status_code >= 200 && res.status_code < 300 do
           Path.join(Qiniu.config[:domain], Poison.decode!(res.body)["key"])
         end
