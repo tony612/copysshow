@@ -11,6 +11,10 @@ body, form, ul {
   padding-right:15px;
 }
 
+.work-shadow {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+}
+
 .work {
   width: 50%;
   margin: 0;
@@ -22,6 +26,7 @@ body, form, ul {
     float: right;
     margin-right: 10px;
     max-width: 90%;
+    @extend .work-shadow;
   }
 }
 #copy {
@@ -30,5 +35,6 @@ body, form, ul {
     float: left;
     margin-left: 10px;
     max-width: 90%;
+    @extend .work-shadow;
   }
 }
