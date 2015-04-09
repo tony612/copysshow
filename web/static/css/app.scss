@@ -8,5 +8,27 @@ body, form, ul {
   margin-right:auto;
   margin-left:auto;
   padding-left:15px;
-  padding-right:15px
+  padding-right:15px;
+}
+
+.work {
+  width: 50%;
+  margin: 0;
+  height: 80%;
+}
+#original {
+  float: left;
+  img {
+    float: right;
+    margin-right: 10px;
+    max-width: 90%;
+  }
+}
+#copy {
+  float: right;
+  img {
+    float: left;
+    margin-left: 10px;
+    max-width: 90%;
+  }
 }

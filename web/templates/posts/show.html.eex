@@ -4,13 +4,13 @@
   <br>
 
   <%= for work <- Enum.sort(@post.works, &(&1.type > &2.type)) do %>
-    <%= work.type %>
-    <br>
-    <img src="<%= work.image_url %>" alt=""/>
-    <br>
+    <div id="<%= work.type %>" class="work">
+      <!-- <%= work.type %> -->
+      <img src="<%= work.image_url %>" alt=""/>
+    </div>
   <% end %>
 
-  <p><%= @post.description %></p>
+  <p id="description"><%= @post.description %></p>
 
 <% else %>
   You can add a post about the original work and the copy. Or just return home.
