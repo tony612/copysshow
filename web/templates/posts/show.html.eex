@@ -10,7 +10,11 @@
     </div>
   <% end %>
 
-  <p id="description"><%= @post.description %></p>
+  <div class="wrapper">
+    <div id="#description">
+      <%= @post.description %>
+    </div>
+  </div>
 
 <% else %>
   You can add a post about the original work and the copy. Or just return home.
