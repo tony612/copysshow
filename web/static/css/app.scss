@@ -16,6 +16,15 @@ body, form, ul {
   padding-top: 20px;
 }
 
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
 .work-shadow {
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
 }
@@ -24,24 +33,36 @@ body, form, ul {
   width: 50%;
   margin: 0;
   height: 80%;
+  .img-wrapper {
+    max-width: 90%;
+    img {
+      @extend .work-shadow;
+    }
+    .icon {
+      clear: both;
+      display: block;
+      margin:0 auto;
+      margin-top: 10px;
+      width: 20px;
+    }
+  }
 }
+
 #original {
   float: left;
-  img {
+  .img-wrapper {
     float: right;
     margin-right: 10px;
-    max-width: 90%;
-    @extend .work-shadow;
   }
 }
+
 #copy {
   float: right;
-  img {
+  .img-wrapper {
     float: left;
     margin-left: 10px;
-    max-width: 90%;
-    @extend .work-shadow;
   }
 }
+
 #description {
 }
