@@ -4,7 +4,7 @@
   <br>
 
   <%= for work <- Enum.sort(@post.works, &(&1.type > &2.type)) do %>
-    <div id="<%= work.type %>" class="work">
+    <div class="work <%= work.type %>">
       <div class="img-wrapper">
         <img src="<%= work.image_url %>" alt=""/>
         <i class="icon icon-heart<%= if work.type == "copy", do: "-broken" %>"></i>
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="wrapper">
-    <div id="#description">
+    <div class="description">
       <%= @post.description %>
     </div>
   </div>

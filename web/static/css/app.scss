@@ -48,7 +48,7 @@ body, form, ul {
   }
 }
 
-#original {
+.original.work {
   float: left;
   .img-wrapper {
     float: right;
@@ -56,7 +56,7 @@ body, form, ul {
   }
 }
 
-#copy {
+.copy.work {
   float: right;
   .img-wrapper {
     float: left;
@@ -64,5 +64,6 @@ body, form, ul {
   }
 }
 
-#description {
+.description {
+  text-align: center;
 }
