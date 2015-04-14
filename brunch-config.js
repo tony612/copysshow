@@ -37,6 +37,9 @@ exports.config = {
     ES6to5: {
       // Do not use ES6 compiler in vendor code
       ignore: [/^(web\/static\/vendor)/]
+    },
+    jshint: {
+      strict: false
     }
   }
 };
