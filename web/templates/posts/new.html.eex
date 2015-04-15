@@ -1,13 +1,20 @@
-<%= form_tag "/posts", multipart: true do %>
-  Original:
-  <input type="text" name="original[image_url]" value="">
-  <input type="file" name="original[file]">
-  <br>
+<%= form_tag "/posts", multipart: true, id: "new_post" do %>
 
-  Copy:
-  <input type="text" name="copy[image_url]" value="">
-  <input type="file" name="copy[file]">
-  <br>
+  <div class="work original">
+    <div class="img-wrapper">
+      <input type="file" name="original[file]" data-preview="original" class="to-preview">
+      <img class="preview original" />
+      <i class="icon icon-heart"></i>
+    </div>
+  </div>
+
+  <div class="work copy">
+    <div class="img-wrapper">
+      <input type="file" name="copy[file]" data-preview="copy" class="to-preview">
+      <img class="preview copy" />
+      <i class="icon icon-heart-broken"></i>
+    </div>
+  </div>
 
   Description:
   <textarea name="post[description]" rows="8" cols="40"></textarea>

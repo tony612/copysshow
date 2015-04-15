@@ -1,0 +1,10 @@
+@import 'shadow';
+
+.img-wrapper {
+  .preview {
+    @extend %work-shadow;
+    height: 300px;
+    width: 500px;
+    max-width: 90%;
+  }
+}
