@@ -9,8 +9,8 @@
     max-width: 90%;
 
     img {
-      width: auto;
       @extend %work-shadow;
+      width: 100%;
     }
 
     .icon {
