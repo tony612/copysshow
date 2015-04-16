@@ -2,12 +2,12 @@ exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
     javascripts: {
-      joinTo: 'js/app.js'
+      joinTo: 'js/app.js',
       // To change the order of concatenation of files, explictly mention here
       // https://github.com/brunch/brunch/tree/stable/docs#concatenation
       order: {
         before: [
-          'web/static/vendor/js/jquery-2.1.3.js',
+          'web/static/vendor/js/jquery-2.1.3.js'
         ]
       }
     },
