@@ -14,7 +14,10 @@
 }
 
 .description textarea {
-  border: none;
   width: 81%;
   text-align: center;
+
+  border: none;
+  outline: none;
+  resize: none;
 }
