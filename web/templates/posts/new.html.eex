@@ -17,9 +17,10 @@
   </div>
 
   <div class="wrapper description">
-    <textarea name="post[description]" rows="8" cols="40" placeholder="Describe why you post them"></textarea>
+    <textarea name="post[description]" rows="8" cols="40" placeholder="Describe why you post it"></textarea>
   </div>
-  <br>
 
-  <input type="submit" value="Create">
+  <div class="submit">
+    <input type="submit" value="Create">
+  </div>
 <% end %>
