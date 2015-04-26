@@ -1,5 +1,7 @@
 @import 'shadow';
 
+#new_post { text-align: center; }
+
 #new_post .img-wrapper {
   .preview {
     @extend %work-shadow;
@@ -49,4 +51,12 @@ $white: #FFFFFF;
       color: $white;
     }
   }
+}
+
+#new_post input.email {
+  border: none;
+  outline: none;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
 }
