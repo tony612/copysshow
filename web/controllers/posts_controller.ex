@@ -14,7 +14,7 @@ defmodule Copysshow.PostsController do
     query = from(p in Post, order_by: [desc: p.updated_at]) |> paginate(page, 1)
     post = Repo.one(query)
     if post, do: post = Repo.preload(post, :works)
-    render conn, "show.html", post: post, next_page: page + 1
+    render conn, "show.html", post: post, next_page: page + 1, hide_home: !!post
   end
 
   def new(conn, _params) do

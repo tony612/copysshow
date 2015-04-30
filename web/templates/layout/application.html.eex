@@ -13,7 +13,9 @@
 
   <body>
     <div class="container">
-      <%= link "Home", to: "/" %>
+      <%= if !@hide_home do %>
+        <%= link "Home", to: "/" %>
+      <% end %>
       <%= link "New post", to: "/posts/new" %>
 
       <p class="info"><%= get_flash(@conn, :info) %></p>
