@@ -20,7 +20,7 @@
     <textarea name="post[description]" rows="8" cols="40" placeholder="Describe why you post it"></textarea>
   </div>
 
-  <input type="text" name="email" value="" class="email" placeholder="email">
+  <input type="text" name="email" value="" class="email" placeholder="Email">
 
   <div class="submit">
     <input type="submit" value="Create">
